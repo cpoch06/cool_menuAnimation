@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #1a1a2e;
+}
+
+.navigation {
+    position: relative;
+    width: 450px;
+    height: 80px;
+    background: #333; /* Fallback for older browsers */
+    background-image: url('https://www.transparenttextures.com/patterns/purty-wood.png'); /* Textured background */
+    background-size: cover;
+    background-blend-mode: overlay;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.navigation ul {
+    display: flex;
+    width: 400px;
+}
+
+.navigation ul li {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    list-style: none;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.navigation ul li:hover {
+    transform: scale(1.1);
+}
+
+.navigation ul li a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+}
+
+.navigation ul li a .icon {
+    position: relative;
+    display: block;
+    line-height: 75px;
+    font-size: 1.8em;
+    text-align: center;
+    color: #ffffffcc;
+    transition: 0.5s;
+}
+
+.navigation ul li.active a .icon {
+    transform: translateY(-40px);
+    color: #ffdd59;
+}
+
+.navigation ul li a .text {
+    position: absolute;
+    color: #ffffffcc;
+    font-weight: 500;
+    font-size: 0.8em;
+    letter-spacing: 0.05em;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.5s;
+}
+
+.navigation ul li.active a .text {
+    opacity: 1;
+    transform: translateY(15px);
+    color: #ffdd59;
+}
+
+.navigation ul li a .circle {
+    position: absolute;
+    display: block;
+    width: 60px;
+    height: 60px;
+    background: transparent;
+    border-radius: 50%;
+    border: 2px solid #ffffffcc;
+    transform: translateY(-45px) scale(0);
+    transition: transform 0.5s ease, border-color 0.5s ease;
+}
+
+.navigation ul li.active a .circle {
+    transform: translateY(-45px) scale(1.2);
+    border-color: #ffdd59;
+}
+
+.indicator {
+    position: absolute;
+    top: -50%;
+    width: 80px;
+    height: 80px;
+    background: #ffdd59;
+    border: 8px solid #1a1a2e;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.indicator::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -25px;
+    width: 25px;
+    height: 25px;
+    background: transparent;
+    border-top-right-radius: 25px;
+    box-shadow: 1px -12px 0 #1a1a2e;
+}
+
+.indicator::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -25px;
+    width: 25px;
+    height: 25px;
+    background: transparent;
+    border-top-left-radius: 25px;
+    box-shadow: -1px -12px 0 #1a1a2e;
+}
+
+.navigation ul li:nth-child(1).active~.indicator {
+    transform: translateX(calc(80px * 0));
+}
+
+.navigation ul li:nth-child(2).active~.indicator {
+    transform: translateX(calc(80px * 1));
+}
+
+.navigation ul li:nth-child(3).active~.indicator {
+    transform: translateX(calc(80px * 2));
+}
+
+.navigation ul li:nth-child(4).active~.indicator {
+    transform: translateX(calc(80px * 3));
+}
+
+.navigation ul li:nth-child(5).active~.indicator {
+    transform: translateX(calc(80px * 4));
+}
